@@ -19,16 +19,29 @@ el script deberá gestionar dicha excepción.
 """
 
 #/home/alumno/Escritorio/PracticasSI2
+"""
+Usage: Defining a method that lists the files in a directory
+Name of method: recursivelyList
+Date of creation: 20/02/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 20/02/2021
+Parameters:
+    Entry:
+     path: Directory from which the list of files or directories
+           that exist is obtained
+    Out: List with files and directories
+
+"""
 def listDirectory(path):
-    return os.listdir(path)
-#m3vcMEXYWG7BLpPw4MsbhDEE5@lon1.tmate.io
-
-
+    if os.access(path, os.R_OK):
+        return os.listdir(path)
+    return ["Error, directory has not reading permissions"]
 
 
 """
-Definition of the main method of the program
-Name of method: main
+Usage: Definition of a recursive method that goes through all the directories and
+subdirectories based on the directory passed by parameter
+Name of method: recursivelyList
 Date of creation: 20/02/2021
 Members: Roberto Jiménez y Alberto Pérez
 Last modification: 20/02/2021
@@ -51,8 +64,10 @@ def recursivelyList(directory):
             print("\x1b[1;37m" + file + " ", end="")
 
     print("\x1b[1;37m \n")
+    #
     for directory in auxDirectories:
         recursivelyList(directory)
+
 
 """
 Definition of the main method of the program
@@ -65,7 +80,7 @@ Parameters:  None, parameters are read by console
 def main():
 
     if  platform.system() != 'Linux':
-        #We check if is a UNIX machine
+        #Check if is a UNIX machine
         print("Error, the OS is not a UNIX machine. Getting out...")
         exit(1)
     if len(sys.argv) == 1:
