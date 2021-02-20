@@ -1,4 +1,6 @@
-import os, sys
+import os, sys, subprocess
+import platform
+import os.path
 
 """
 Ejercicio 1a. Desarrollar un script donde se muestren los ficheros pasados por
@@ -12,41 +14,61 @@ b. Si se produce alguna excepción grave a la hora de la búsqueda en sí, el
 script debera comunicarlo.
 """
 
-#poner como variables globales los comandos, para si se cambia de SO
-
 """
-Definicion de un metodo que obtiene los permisos de los ficheros pasados por
-parametro
+Definición de un método que obtiene los permisos de los ficheros pasados por
+parámetro
 Nombre: comprobarPermisosFicheros
-Fecha de creacion: 18/02/2021
-Miembros: Roberto Jimenez y Alberto Perez
-Ultima modificacion: 18/02/2021
-Parametros: Ninguno, los parametros son los que se pasan como argumento a la
+Fecha de creación: 18/02/2021
+Miembros: Roberto Jiménez y Alberto Pérez
+Última modificación: 20/02/2021
+Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
 llamada
+Documentación utilizada:  https://docs.python.org/3/library/subprocess.html
 """
 def comprobarPermisosFicheros():
-    contadorParametros = 0
+
+    contadorParametros = 1
     while contadorParametros < len(sys.argv):
-        comandoEjecutar = "ls -l " + sys.argv[contadorParametros]
-        #print(comandoEjecutar)
-        os.system(comandoEjecutar)
+        try:
+            if (not os.path.isdir(sys.argv[contadorParametros])  and
+               not os.path.isfile(sys.argv[contadorParametros])):
+               #Comprobación de si el path es erróneo (siendo este fichero o directorio)
+               print("Error in path: " + sys.argv[contadorParametros])
+            else:
+               subprocess.run(['ls', '-l', sys.argv[contadorParametros]], check = True)
+               #Comprobar persmisos directorio?
+        except subprocess.CalledProcessError as err:
+            #Se captura la excepción más común en el método subprocess.run()
+            print('Error in processor call:', err)
+        except Exception as e:
+            #Se captura cualquier posible error
+            print('Error detected: ', e)
         contadorParametros += 1
 
 
 """
-Definicion del metodo main del programa
+Definición del metodo principal del programa
 Nombre: main
 Fecha de creacion: 18/02/2021
-Miembros: Roberto Jimenez y Alberto Perez
-Ultima modificacion: 18/02/2021
-Parametros: Ninguno, los parametros son los que se pasan como argumento a la
+Miembros: Roberto Jiménez y Alberto Pérez
+Última modificación: 20/02/2021
+Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
 llamada
 """
 def main():
-    print(len(sys.argv))
+
+    if  platform.system() != 'Linux':
+        #En este caso, se comprueba que la máquina sea una distribución linux
+        print("Error, the OS is not a UNIX machine. Getting out...")
+        exit(1)
     if len(sys.argv) == 1:
+        """
+        Este caso se ejecuta cuando no se pasa ningún parámetro al script
+        y se muestran los permisos de los ficheros del directorio actual
+        """
         os.system("ls -l")
     else:
+        #Este caso se ejecuta cuando se pasan parámetros al script
         comprobarPermisosFicheros()
 
 
