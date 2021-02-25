@@ -1,0 +1,85 @@
+1
+nubes privadas esta dsieñado apra computacion paralela y utliza la herramienta d emigraicon de procesos preventiva
+proporciona una imagen no solo un sistema
+el descubrimiento de recursos automaticos
+sockets
+admite arq 64 brightness_1incluye motor en línea
+herramientas para instalacion y configuraci´no automática
+caract
+proceso sinvitados se pueden mover entre cluster
+se comaprten de forma asimétrica o simétricA
+
+CONDOR
+usuarios envians u trbaajo ens erie o paralelo este los coloca en una cola y elije cuando y donde ejecutarlos en base a una politica
+se puede utilizr para gestionar un cluster de nodos
+ejemplo en la nasa
+
+
+
+3) Enuncia y describe el detalladamente
+ el modelo de computación distribuida
+ “Utility Computing”, características y
+  beneficios/inconvenientes.
+
+Utily Computing llega como una excelente alternativa para las compañías que tienen como meta
+la economía y el control del uso de activos de informática y telecomunicaciones.
+Para reforzar, un ejemplo bastante simple de funcionamiento de este modelo que viene tomando
+cuerpo con el pasar del tiempo, es la comparación con la forma de cobro de teléfono celular...
+que se pagan de acuerdo con el consumo efectuado
+En esencia, 'utility computing' proporciona reducción de costes de infraestructura
+y mayor control sobre estos últimos, sin olvidar que la clave es´ta en el nivel de servicio
+Si una aplicación necesita más recursos, se toman de donde haya recursos disponibles para
+mantener el nivel de servicio requerido. A diferencia de un modelo Grid en el que no existe
+garantía de nivel de servicio, puesto que los recursos se explotan al límite, mientras que en
+el modelo 'utility' es el protagonista.
+En lo que a tecnología se refiere, la automatización son claves para el desarrollo de este modelo.
+Mediante la virtualización, es posible agrupar los recursos individuales, tanto de almacenamiento
+como de servidores, en un pool virtual de recursos que pueda ser asignado a cada aplicción en función
+de las necesidades, de forma transparente.
+Ventajas:
+- Mayor aprovechamiento de los recursos disponibles
+- Ciertas tareas se puedan ejecutar de forma automática ahorrando costes
+- Facilita la vida al administrador de sistemas
+- Correcta gestión de los niveles de servicio
+Inconvenientes:
+- Necesaria conexión a internet
+- Dependencia del proveedor de los recursos
+- En algunos casos, complejidad de configuración
+- Privacidad, debido a que la empresa proporcionante
+- Falta de control sobre los recursos
+
+
+https://www.computing.es/infraestructuras/informes/1009675001801/servicio-clave-utility-computing.1.html#:~:text=En%20esencia%2C%20'utility%20computing',el%20nivel%20de%20servicio%20requerido.
+4) Enuncia y describe los distintos tipos de grids existentes en el mercado
+
+
+ateca, di tu los 3 primeros de los de abajao
+ATECAAAAA
+
+Algunos tipos de grids a lo largo del mercado son:
+    - European Grid Infrastructure (servicios para investigación y multinacionales)
+    - Enabling Grids for E-sciencE (Igual que el anterior, pero no está en uso)
+    - INFN Production Grid. Proyecto de un instituto italiano, que realizó distintos
+        proyectos como bioinformática, o contribuyó al primero de estos
+    - NorduGrid (o ARC). Programa open source para proporcionar infraestructura a distintos proyectos
+    - OurGrid. Open source, pero está basado en la conexión P2P DI ESTE TAMBIEN QUE ES P2PPPPPPPPP!!!!!
+    - Sun Grid: es open source y fue desarrolado por sun microsystems y su funcion principal es la gestion de un sistema manejador
+                de recuros computacionales o procesos distribuidos en ambientes heterogeneos para aprovechar los recursos de la manera mas eficiente
+    - Techila: es un producto software para la computacion comercial. Es una solucion de gestion y middleware
+               de computacion distribuida usado para HTC (cluster alto rendimiento, gran numero de tareas independientes) y HPC ( cluster de altas prestaciones, operaciones paralelas)
+    - Xgrid: es un protocolo de computacion distribuida desarrollado por una subdivision de apple.
+             Proporciona a los administradores de una red un método para crear un clúster informático.
+             la instalacion de este protocolo no tiene coste alguno dado que viene presintalado en el
+             propio sistema operativo de appel MacOS
+
+5)
+PrimeGrid proyecto quet u liza la plataofrma boieng, obetivos
+desarrollar aplicaciones en lenguaje perl
+factorizar los numeros del rsa
+ayudar en aspectos matmaticos
+SOY MAS DE OPENUP
+6
+comunidad abierta cuyo objetivo es la evolucion de los ssdd a gran escala
+esta compuesto por representante de garnades empresas microsoft oracle20computing
+estandar de un sd
+computación en cloud y redes y certificados ...
