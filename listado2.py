@@ -30,7 +30,6 @@ Parameters:
      path: Directory from which the list of files or directories
            that exist is obtained
     Out: List with files and directories
-
 """
 def listDirectory(path):
     if os.access(path, os.R_OK):
