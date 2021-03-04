@@ -7,7 +7,7 @@ Date of creation: 04/03/2021
 Members: Roberto Jiménez y Alberto Pérez
 Last modification: 04/03/2021
 Parameters:
-    Entry:
+    Entry: cipote
      path: Directory from which the list of files or directories
            that exist is obtained
     Out: List with files and directories
