@@ -9,7 +9,7 @@ Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
 llamada
 """
 def main():
-    # comando de llamada
+    # comando de llamada prueba
     #python3 ej7.py /home/alumno/Escritorio/PractiasAS2/Practica1/practicasAS2/p1 /home/alumno/Escritorio/PractiasAS2/Practica1/practicasAS2/p2
 
     if  platform.system() != 'Linux':
