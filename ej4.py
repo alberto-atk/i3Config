@@ -1,4 +1,5 @@
-import os, pyzmail, imapclient, platform, sys
+import os, pyzmail, platform, sys
+from imapclient import IMAPClient
 
 
 
@@ -17,7 +18,21 @@ def main():
         print("Error, the OS is not a UNIX machine. Getting out...")
         exit(1)
     if len(sys.argv) == 1:
-        print("Robertito")
+        #startDate = input("Put the start date: (xx-xx-xxxx)")
+
+        #finalDate = input("Put the final date: (xx-xx-xxxx)")
+
+         server = IMAPClient('smtp.gmail.com', use_uid=True)
+         server.login('roberatecaads2@gmail.com', 'administracion2')
+         select_info = server.select_folder('INBOX')
+
+         messages = server.search(None, 'UNSEEN')
+
+
+         for msgid, data in server.fetch(messages, ['ENVELOPE']).items():
+             envelope = data[b'ENVELOPE']
+             print('ID #%d: "%s" received %s' % (msgid, envelope.subject.decode(), envelope.date))
+
 
     else:
         #Case when parameters are passed to the script
