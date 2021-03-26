@@ -1,6 +1,4 @@
-import os, pyzmail, platform, sys
-from imapclient import IMAPClient
-
+import imaplib, pyzmail, platform, sys, datetime, locale
 
 
 """
@@ -18,21 +16,28 @@ def main():
         print("Error, the OS is not a UNIX machine. Getting out...")
         exit(1)
     if len(sys.argv) == 1:
-        #startDate = input("Put the start date: (xx-xx-xxxx)")
+        startDate = input("Put the start date: (dd-mm-yyyy): ")
+        startDateAux = checkDate(startDate)
+        if(not(startDateAux)):
+            print("Getting out...")
+            exit()
 
-        #finalDate = input("Put the final date: (xx-xx-xxxx)")
+        finalDate = input("Put the final date: (dd-mm-yyyy): ")
+        finalDateAux = checkDate(finalDate)
+        if(not(finalDateAux)):
+            print("Getting out...")
+            exit()
 
-         server = IMAPClient('smtp.gmail.com', use_uid=True)
-         server.login('roberatecaads2@gmail.com', 'administracion2')
-         select_info = server.select_folder('INBOX')
+        if(finalDateAux < startDateAux):
+            print("Error, start date is bigger than final date")
+            print("Getting out...")
+            exit()
 
-         messages = server.search(None, 'UNSEEN')
+        server = imaplib.IMAP4_SSL('imap.gmail.com')
+        server.login('roberatecaads2@gmail.com', 'administracion2')
+        select_info = server.select("INBOX")
 
-
-         for msgid, data in server.fetch(messages, ['ENVELOPE']).items():
-             envelope = data[b'ENVELOPE']
-             print('ID #%d: "%s" received %s' % (msgid, envelope.subject.decode(), envelope.date))
-
+        deleteMails(server, startDateAux, finalDateAux)
 
     else:
         #Case when parameters are passed to the script
@@ -40,8 +45,29 @@ def main():
 
 
 
+def checkDate(date):
+    try:
+        dateAux = str(date).split("-")
+        return datetime.datetime(int(dateAux[2]),int(dateAux[1]),int(dateAux[0]))
+    except ValueError:
+        print("Error, date doesn't exists")
+        return None
+    except IndexError:
+        print("Error, incorrect date format")
+        return None
 
 
+
+def deleteMails(server,startDate,finalDate):
+    query = ("UNSEEN SINCE " + startDate.strftime("%d-%b-%Y") + " BEFORE "
+            + finalDate.strftime("%d-%b-%Y"))
+    estado, messages = server.search(None,query)
+    messages = messages[0].split()
+
+    for mail in messages:
+        server.store(mail, '+FLAGS', '\\Deleted')
+    print(str(len(messages)) + " mail deleted")
+    server.expunge()
 
 
 if __name__ == "__main__":
