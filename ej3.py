@@ -96,7 +96,7 @@ def main():
                 reachedTimes = 0
             if reachedTimes == 4:
                 try:
-                    smtp = create_sesion(mailFrom,passwd)
+                    smtp = create_session(mailFrom,passwd)
                     email = generateMail(mailFrom, mailTo, subject,content )
                     smtp.sendmail(mailFrom, mailTo, email.as_string())
                     smtp.quit()
