@@ -1,14 +1,21 @@
 import os, sys, platform
 
-
+"""
+Ejercicio 5. Desarrollar un script que nos muestre por consola información relevante del
+identificador de proceso que el usuario inserte por consola.
+Sintaxis: proceso.py
+El script deberá mostrar la siguiente información del proceso: identificador UID, propietario
+PID, PPID, Prioridad absoluta ”C”, Prioridad Relativa “PRI” y la Dirección en memoria o en
+disco del proceso “ADDR”
+"""
 
 """
 Definition of the main method of the program
 Name of method: main
-Date of creation: 28/02/2021
+Date of creation: 7/03/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 28/02/2021 //rellenar lo demas solo esta bien fecha
-Parameters:  None, parameters are read by console
+Last modification: 7/03/2021
+Parameters:  None, parameters are passed 
 """
 def main():
     if  platform.system() != 'Linux':

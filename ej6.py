@@ -1,12 +1,18 @@
 import os, platform, sys,subprocess
+
 """
-Definición del metodo principal del programa
+Ejercicio 6. Desarrollar un script para que busque a aquellos procesos con una prioridad relativa
+superior a 11 y les decremente su prioridad en 5 unidades; posteriormente deberá mostrar que
+procesos han sido susceptibles de modificación junto con la nueva prioridad asignada. 
+"""
+
+"""
+Definition of the main method of the program
 Nombre: main
-Fecha de creacion: 28/02/2021
+Fecha de creacion: 8/03/2021
 Miembros: Roberto Jiménez y Alberto Pérez
-Última modificación: 28/02/2021
-Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
-llamada
+Última modificación: 8/03/2021
+Parámetros: Parameters are passed
 """
 def main():
 
@@ -16,25 +22,22 @@ def main():
         exit(1)
     if len(sys.argv) == 1:
 
+        #Getting the PID list of processes
         vectorPID = subprocess.getoutput("ps -l | awk '$8 <= 0 && $4 {print $4}'")
-        #print(vectorPID)
-
         lista = vectorPID.split()
         vectorNI=subprocess.getoutput("ps -l| awk '$8>=0 && $4 {print $8}'")
         lista2 = vectorNI.split()
         lista2.remove("NI")
-        print(lista2)
 
+        #Updates the proccesses priority
         counter = 0
         for pid in lista:
             if int(lista2[counter]) >= 0:
-
                 query = "sudo renice -n " + str(int(lista2[counter]) - 5) + " -p " + pid
-                print(query)
                 os.system(query)
-                print("El proceso " + pid + " se ha modificado")
+                print("The process " + pid + " has been modified")
             else:
-                print("No hay valores con prioridad mayor de 10")
+                print("No process with priority bigger than ten")
             counter += 1
     else:
         #Case when parameters are passed to the script
