@@ -18,23 +18,25 @@ b. Si el usuario que lo invoca no tiene permisos de lectura del directorio,
 el script deberá gestionar dicha excepción.
 """
 
-#/home/alumno/Escritorio/PracticasSI2
+
 """
 Usage: Defining a method that lists the files in a directory
-Name of method: recursivelyList
+Name of method: listDirectory
 Date of creation: 20/02/2021
 Members: Roberto Jiménez y Alberto Pérez
 Last modification: 20/02/2021
 Parameters:
     Entry:
-     path: Directory from which the list of files or directories
+        - path: Directory from which the list of files or directories
            that exist is obtained
-    Out: List with files and directories
+    Out:
+        - List with files and directories
 """
 def listDirectory(path):
     if os.access(path, os.R_OK):
         return os.listdir(path)
     return ["Error, directory has not reading permissions"]
+
 
 
 """
@@ -46,7 +48,7 @@ Members: Roberto Jiménez y Alberto Pérez
 Last modification: 20/02/2021
 Parameters:
     Entry:
-     directory: Directory which is going to be listed
+        - directory: Directory which is going to be listed
     Out: None
 
 """

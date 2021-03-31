@@ -1,16 +1,28 @@
 import os, sys
 
 """
-Usage: Defining a method that lists the files in a directory
-Name of method: recursivelyList
-Date of creation: 04/03/2021
+Ejercicio 8. Generar un script que nos permita generar ficheros tar, inicialmente el script nos
+mostrará un menú con las siguientes opciones:
+a. Generacion fichero tar
+b. Extracción fichero tar
+c. Visualización de la información del fichero tar (nombre del fichero, propietario, y
+tamaño)
+d. Listado de todos los archivos incluidos en el fichero tar
+e. Validación de que el fichero tar se ha generado correctamente, para ello el menú deberá
+solicitar previamente el fichero tar a validar.
+Sintaxis: generatar.py
+"""
+
+
+"""
+Usage: Defining a method that create a Tar file from an input wrote by user
+Name of method: optionA
+Date of creation: 16/03/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 04/03/2021
+Last modification: 16/03/2021
 Parameters:
-    Entry: cipote
-     path: Directory from which the list of files or directories
-           that exist is obtained
-    Out: List with files and directories
+    Entry: None
+    Out: None, output it's tar file
 """
 def optionA():
     print("Name of new tar file: ")
@@ -24,17 +36,16 @@ def optionA():
         print("Do you want add more files (y/n)?")
         next = input()
 
+
 """
-Usage: Defining a method that lists the files in a directory
-Name of method: recursivelyList
-Date of creation: 04/03/2021
+Usage: Defining a method that extracts files from a Tar file
+Name of method: optionB
+Date of creation: 16/03/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 04/03/2021
+Last modification: 16/03/2021
 Parameters:
-    Entry:
-     path: Directory from which the list of files or directories
-           that exist is obtained
-    Out: List with files and directories
+    Entry: None
+    Out: None, output is the files extracted
 """
 def optionB():
     print("Name of the .tar file")
@@ -42,33 +53,30 @@ def optionB():
     os.system(("tar -xvf" + fileTarName))
 
 """
-Usage: Defining a method that lists the files in a directory
-Name of method: recursivelyList
-Date of creation: 04/03/2021
+Usage: Defining a method that lists info from a Tar file
+Name of method: optionC
+Date of creation: 16/03/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 04/03/2021
+Last modification: 16/03/2021
 Parameters:
-    Entry:
-     path: Directory from which the list of files or directories
-           that exist is obtained
-    Out: List with files and directories
+    Entry: None
+    Out: None, output only is showed by terminal
 """
 def optionC():
     print("Name of .tar file")
     fileTarName = input()
     os.system(("ls -l " + fileTarName))
 
+
 """
-Usage: Defining a method that lists the files in a directory
-Name of method: recursivelyList
-Date of creation: 04/03/2021
+Usage: Defining a method that lists the files in a Tar file
+Name of method: optionD
+Date of creation: 16/03/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 04/03/2021
+Last modification: 16/03/2021
 Parameters:
-    Entry:
-     path: Directory from which the list of files or directories
-           that exist is obtained
-    Out: List with files and directories
+    Entry: None
+    Out: None, output only is showed by terminal
 """
 def optionD():
     print("Name of .tar file: ")
@@ -77,16 +85,16 @@ def optionD():
 
 
 """
-Usage: Defining a method that lists the files in a directory
-Name of method: recursivelyList
-Date of creation: 04/03/2021
+Usage: Defining a main method of program, which is able to work with Tar files,
+differents options are splitted in some methods (OptionA, B, C and D).
+Here user select from a menu differents options
+Name of method: main
+Date of creation: 14/03/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 04/03/2021
+Last modification: 16/03/2021
 Parameters:
-    Entry:
-     path: Directory from which the list of files or directories
-           that exist is obtained
-    Out: List with files and directories
+    Entry: None
+    Out: None, info is requested by console
 """
 main():
     continuar="y"

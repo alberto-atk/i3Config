@@ -1,13 +1,39 @@
 import os, platform, sys,subprocess
 
+
 """
-Definición del metodo principal del programa
-Nombre: createUser
-Fecha de creacion: 19/03/2021
-Miembros: Roberto Jiménez y Alberto Pérez
-Última modificación: 19/03/2021
-Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
-llamada
+Ejercicio 8. Realizar un script que genere el alta de cuatro usuarios en el sistema, dichos
+usuarios deberán pertenecer al grupo Alumnos, para ello se tendrán que realizar una serie de
+etapas:
+– Necesarias :
+Editar el fichero /etc/passwd para definir la nueva cuenta de usuario.
+Introducir una contraseña inicial (comando passwd).
+Crear el directorio propio (HOME) del usuario.
+– Conveniente para el usuario :
+Copiar los ficheros de arranque por defecto al directorio del usuario.
+Crear el directorio de correo del usuario y definir alias del correo.
+Realizar las tareas de configuración especificas a algunas aplicaciones.
+Informar al usuario cuando la apertura haya sido realizada.
+– Conveniente para el administrador :
+Añadir el usuario al fichero /etc/group.
+Registrar información contable.
+Introducir al usuario en la base de datos de usuarios de la entidad.
+Configurar las cuotas de disco.
+Verificar que la cuenta ha sido creada correctamente.
+"""
+
+
+"""
+Usage: Defining a method that create a user into a Unix system
+Name of method: createUser
+Date of creation: 20/03/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 20/03/2021
+Parameters:
+    Entry:
+        - nameUser: String which contains user's name
+        - group: String which contains group name for new user
+    Out: None
 """
 def createUser(nameUser, group):
     #os.system("sudo groupadd " + )
@@ -23,13 +49,19 @@ def createUser(nameUser, group):
 
 
 """
-Definición del metodo principal del programa
-Nombre: copyStartFiles
-Fecha de creacion: 19/03/2021
-Miembros: Roberto Jiménez y Alberto Pérez
-Última modificación: 19/03/2021
-Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
-llamada
+Usage: Defining a method that configure start files for new user, files copied
+are:
+    - ~/.bashrc
+    - ~/.home
+    - ~/.bash_logout
+Name of method: copyStartFiles
+Date of creation: 20/03/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 20/03/2021
+Parameters:
+    Entry: None
+    Out: None
+Documentation: https://www.sever-world.info/en/note?os=Ubuntu_18.04&p=mail&f=3
 """
 def copyStartFiles():
     #Start files are copied to new user directory
@@ -41,19 +73,20 @@ def copyStartFiles():
 
     os.system("sudo cp ~/.bash_logout /home/" + nameUser)
     os.system("sudo chown " +  nameUser + " /home/" + nameUser + "/.bash_logout")
-    #https://www.sever-world.info/en/note?os=Ubuntu_18.04&p=mail&f=3
+
 
 
 
 
 """
-Definición del metodo principal del programa
-Nombre: main
-Fecha de creacion: 19/03/2021
-Miembros: Roberto Jiménez y Alberto Pérez
-Última modificación: 19/03/2021
-Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
-llamada
+Usage: Defining a main method
+Name of method: main
+Date of creation: 20/03/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 20/03/2021
+Parameters:
+    Entry: None
+    Out: None
 """
 def main():
 

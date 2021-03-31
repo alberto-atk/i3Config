@@ -15,17 +15,19 @@ script debera comunicarlo.
 """
 
 """
-Definición de un método que obtiene los permisos de los ficheros pasados por
-parámetro
-Nombre: comprobarPermisosFicheros
-Fecha de creación: 18/02/2021
-Miembros: Roberto Jiménez y Alberto Pérez
-Última modificación: 20/02/2021
-Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
-llamada
-Documentación utilizada:  https://docs.python.org/3/library/subprocess.html
+Usage: Defining a method which obtains permissions of the files passed by
+parameter
+Name of method: checkFilePermissions
+Date of creation: 18/02/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 20/02/2021
+Parameters:
+    Entry:  None
+    Out: None
+Documentation:  https://docs.python.org/3/library/subprocess.html
 """
-def comprobarPermisosFicheros():
+
+def checkFilePermissions():
 
     contadorParametros = 1
     while contadorParametros < len(sys.argv):
@@ -36,29 +38,29 @@ def comprobarPermisosFicheros():
                print("Error in path: " + sys.argv[contadorParametros])
             else:
                subprocess.run(['ls', '-l', sys.argv[contadorParametros]], check = True)
-               #Comprobar persmisos directorio?
         except subprocess.CalledProcessError as err:
-            #Se captura la excepción más común en el método subprocess.run()
             print('Error in processor call:', err)
         except Exception as e:
-            #Se captura cualquier posible error
             print('Error detected: ', e)
         contadorParametros += 1
 
 
 """
-Definición del metodo principal del programa
-Nombre: main
-Fecha de creacion: 18/02/2021
-Miembros: Roberto Jiménez y Alberto Pérez
-Última modificación: 20/02/2021
-Parámetros: Ninguno, los parámetros son los que se pasan como argumento a la
-llamada
+Usage: Defining main method of program
+Name of method: main
+Date of creation: 18/02/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 20/02/2021
+Parameters:
+    Entry:  None
+
+Documentation:  https://docs.python.org/3/library/subprocess.html
 """
 def main():
 
     if  platform.system() != 'Linux':
-        #En este caso, se comprueba que la máquina sea una distribución linux
+        #Check OS System
+
         print("Error, the OS is not a UNIX machine. Getting out...")
         exit(1)
     if len(sys.argv) == 1:
@@ -68,8 +70,7 @@ def main():
         """
         os.system("ls -l")
     else:
-        #Este caso se ejecuta cuando se pasan parámetros al script
-        comprobarPermisosFicheros()
+        checkFilePermissions()
 
 
 
