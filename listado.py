@@ -34,7 +34,7 @@ def checkFilePermissions():
         try:
             if (not os.path.isdir(sys.argv[contadorParametros])  and
                not os.path.isfile(sys.argv[contadorParametros])):
-               #Comprobación de si el path es erróneo (siendo este fichero o directorio)
+               #Check if the path is wrong
                print("Error in path: " + sys.argv[contadorParametros])
             else:
                subprocess.run(['ls', '-l', sys.argv[contadorParametros]], check = True)
@@ -64,10 +64,7 @@ def main():
         print("Error, the OS is not a UNIX machine. Getting out...")
         exit(1)
     if len(sys.argv) == 1:
-        """
-        Este caso se ejecuta cuando no se pasa ningún parámetro al script
-        y se muestran los permisos de los ficheros del directorio actual
-        """
+        #Case when no parameters are passed to the script, shows files and directory permissiones
         os.system("ls -l")
     else:
         checkFilePermissions()

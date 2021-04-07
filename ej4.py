@@ -85,7 +85,7 @@ def checkDate(date):
 
 """
 Delete all mails in a date range
-Name of method: main
+Name of method: deleteMails
 Date of creation: 27/02/2021
 Members: Roberto Jiménez y Alberto Pérez
 Last modification:

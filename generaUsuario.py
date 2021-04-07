@@ -36,7 +36,6 @@ Parameters:
     Out: None
 """
 def createUser(nameUser, group):
-    #os.system("sudo groupadd " + )
     userExists = os.system("sudo useradd -g " + group + " "+  nameUser)
     if(userExists != 0):
         return

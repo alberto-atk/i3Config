@@ -50,7 +50,7 @@ def main():
 
 """
 Deletes the duplicate files
-Nombre: main
+Nombre: deleteDuplicateFiles
 Fecha de creacion: 11/03/2021
 Miembros: Roberto Jiménez y Alberto Pérez
 Última modificación: 11/03/2021
@@ -61,8 +61,8 @@ Parámetros:
     Out:
 """
 def deleteDuplicateFiles(dir1, dir2):
-    filesDir1 = subprocess.getoutput("ls " + dir1).split() #Get a list of files
-    filesDir2 = subprocess.getoutput("ls " + dir2).split() #Get a list of files
+    filesDir1 = subprocess.getoutput("ls " + dir1).split() #Get a list of files from directory1
+    filesDir2 = subprocess.getoutput("ls " + dir2).split() #Get a list of files from directory2
 
 
     for file1 in filesDir1:

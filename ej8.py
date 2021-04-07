@@ -28,6 +28,7 @@ def optionA():
     print("Name of new tar file: ")
     fileTarName = input()
     next = "y"
+    #Loop for adding more files
     while next == "y":
         print("File name to introduce into a tar file: ")
         fileName = input()
@@ -96,7 +97,7 @@ Parameters:
     Entry: None
     Out: None, info is requested by console
 """
-main():
+def main():
     continuar="y"
     while continuar == "y":
         print("-------------------------------------------------------------- \n"+
