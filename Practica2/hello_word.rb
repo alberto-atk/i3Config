@@ -1,6 +1,9 @@
 
 
-
+=begin
+ Pruebas de todo en ruby   
+=end
+    
 def listFiles x
     #exec ("ls -l "  + x)
     query = 'ls -l ' + x
