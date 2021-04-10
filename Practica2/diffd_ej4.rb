@@ -117,6 +117,7 @@ def diff dir1, dir2, reverse
     end
 end
 
+
 list = getParameters
 actualDir = `pwd`
 
@@ -153,22 +154,6 @@ else
         end
     else
         puts 'Too many arguments'
-    end
-    
+    end    
 end
-=begin
-case list.length
-when 1
-    if list[0] == '-r'
-        puts 'Error, a directory is necessary for compare'
-    elsif checkDirectory list[0]
-        puts 'aqui hago diff con dir actual'
-    else
-        puts 'Syntax error'
-    end
-when 2
-    puts "hay 2"
-else
-    puts "re"
-end
-=end
+
