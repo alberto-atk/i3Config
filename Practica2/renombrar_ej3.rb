@@ -6,27 +6,6 @@ El script deberá contemplar los posibles casos de error, como por ejemplo el pa
 correcto
 =end
 
-
-
-
-=begin
-Usage: Check if a path exists
-Name of method: checkDirectory
-Date of creation: 08/04/2021
-Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
-Parameters:
-    Entry:
-        - path: path that will be checked
-    Out: 
-        - boolean: True if exists
-=end
-def checkDirectory path
-    return Dir.exist?(path)
-end
-
-
-
 =begin
 Usage: List files of a directory
 Name of method: listFiles
@@ -39,8 +18,10 @@ Parameters:
     Out: 
         - List of files of path
 =end
-def listFiles path
-    return `ls -l #{path}`
+def listFiles extension
+    list = []
+    list =  `ls *.#{extension} | nl`
+    return list.split("\n")
 end
 
 
@@ -59,9 +40,17 @@ Parameters:
 if ARGV.length == 2
     current_extension = ARGV[0]
     new_extension = ARGV[1]    
-    if checkDirectory path
-        puts listFiles path
+
+    files = listFiles current_extension
+    puts "Files available for rename: "
+    puts files
+    puts "Select the number of the file to rename: "
+    fileToRename = (STDIN.gets.chomp.to_i - 1)
+    
+    if (fileToRename >= 0) && (fileToRename < (files.length - 1))
+        auxFile = files[fileToRename].split(" ")
+        puts "#{auxFile[1]}"
     else
-        puts "Error, path is not correct"
+        puts "Error, number of file invalid"
     end
 end
