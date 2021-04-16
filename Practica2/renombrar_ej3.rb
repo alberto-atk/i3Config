@@ -24,9 +24,26 @@ def listFiles extension
     return list.split("\n")
 end
 
+=begin
+Usage: List files of a directory
+Name of method: listFiles
+Date of creation: 08/04/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 08/04/2021
+Parameters:
+    Entry:
+        - path: path that will be checked
+    Out: 
+        - List of files of path
+=end
+def renameFile fileName, new_extension
+    auxName = fileName.split(".")
+    onlyName = auxName[0]
+    `mv #{fileName} #{onlyName}.#{new_extension} `
+    return "#{onlyName}.#{new_extension}"
+end
 
 =begin
-PREGUNTAR A VER LO DE LOS FICHEROS COMO SE PASAN Y ESO
 Usage: Body of program
 Date of creation: 08/04/2021
 Members: Roberto Jiménez y Alberto Pérez
@@ -47,9 +64,10 @@ if ARGV.length == 2
     puts "Select the number of the file to rename: "
     fileToRename = (STDIN.gets.chomp.to_i - 1)
     
-    if (fileToRename >= 0) && (fileToRename < (files.length - 1))
+    if (fileToRename >= 0) && (fileToRename < files.length)
         auxFile = files[fileToRename].split(" ")
-        puts "#{auxFile[1]}"
+        renamedFile = renameFile auxFile[1], new_extension
+        puts "#{auxFile[1]} renamed to: #{renamedFile}"
     else
         puts "Error, number of file invalid"
     end

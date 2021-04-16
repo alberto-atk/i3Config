@@ -24,6 +24,30 @@ def is_number? object
     true if Float(object) rescue false 
 end
 
+    
+=begin
+Usage: Sort 
+Name of method: listFiles
+Date of creation: 08/04/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 08/04/2021
+Parameters:
+    Entry:
+        - path: path that will be checked
+    Out: 
+        - List of files of path
+=end
+def cleanArgv argv
+    aux = []
+    argv.each do |element|
+        if is_number? element
+            aux.push(element)
+        else
+            puts "Error, #{element} is not a number"
+        end
+    end
+    return aux
+end
 
 
 =begin
@@ -38,23 +62,17 @@ Parameters:
     Out: 
         - List of files of path
 =end
-def sortParameters argv
-    aux = []
-    j = 0
-    for i in(argv.length)
-        if is_number? argv[i]
-            aux[j] = argv[i]
-            puts "#{aux[j]}"
-            j++
-        
-    
+def generateStringFromArray array
+    puts ""
+    string = ""
+    array.each do |n|
+        string += "#{n} "
+    end
+    return string
 end
-    
-
 
 
 =begin
-PREGUNTAR A VER LO DE LOS FICHEROS COMO SE PASAN Y ESO
 Usage: Body of program
 Date of creation: 08/04/2021
 Members: Roberto Jiménez y Alberto Pérez
@@ -65,4 +83,15 @@ Parameters:
     Out: 
         - None
 =end
-sortParameters(ARGV)
+
+if ARGV.length > 0
+    argvCleaned = cleanArgv(ARGV)
+
+    numbers = generateStringFromArray argvCleaned
+    sortedNumbers = generateStringFromArray argvCleaned.sort
+    
+    puts "The numbers without sorting are: #{numbers}"
+    puts "The sorted numbers are: #{sortedNumbers}"
+else
+    puts "Error, you have to pass parameters"
+end

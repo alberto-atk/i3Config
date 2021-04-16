@@ -31,6 +31,26 @@ def checkDirectory path
 end
 
 
+=begin
+Usage: Check if a path exists
+Name of method: checkDirectory
+Date of creation: 08/04/2021
+Members: Roberto Jiménez y Alberto Pérez
+Last modification: 08/04/2021
+Parameters:
+    Entry:
+        - path: path that will be checked
+    Out: 
+        - boolean: True if exists
+=end
+def listDirectory path
+    if File.readable?(path)
+        list = `ls #{path}`
+        return list.split(" ")
+    end 
+    return ["Error, directory has not reading permissions"]
+end
+
 
 =begin
 Usage: List files of a directory
@@ -44,8 +64,25 @@ Parameters:
     Out: 
         - List of files of path
 =end
-def listFiles path
-    return `ls -l #{path}`
+def listDirectories path
+    auxDirectories = []
+    files = listDirectory path
+    puts "\e[1;34m#{path}\e[m"
+    files.each do |element|
+        newPath = path + "/" + element
+        if checkDirectory newPath
+            puts "\e[1;36m#{newPath}\e[m"
+            auxDirectories.push(newPath)
+        else
+            puts "\e[1;37m#{element}\e[m"
+        end
+    end
+
+    puts "\e[1;37m\n\e[m"
+
+    auxDirectories.each do |directory|
+        listDirectories directory   
+    end
 end
 
 
@@ -60,15 +97,14 @@ Parameters:
     Out: 
         - None
 =end
-puts "Put the path from the directory to list"
+puts "Put the directory path  to list"
 path = gets.chomp
 
 if checkDirectory path
-    puts listFiles path
+    listDirectories path
 else
     puts "Error, path is not correct"
 end
-
 =begin
 TODO hay que comprobar lo de si el usuario tiene permisos
 pero nadie sabe
