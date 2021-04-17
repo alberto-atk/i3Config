@@ -20,6 +20,8 @@ for linea in lista3
     #puts  auxLinea[1]
     puts linea
 end
+
+
 #puts tags
 #ruby webCrawler_ej8.rb https://moodle.unizar.es/add/ | grep -E 'https://[a-zA-Z0-9./?@=%&:_#-]*' 
 #https://www.rubyguides.com/2012/01/parsing-html-in-ruby/
