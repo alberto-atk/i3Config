@@ -106,10 +106,16 @@ def checkThirds characters, array
     for i in [3,6,9]
         if (i == 3) && (characters[i] == "x")
             array[1] = array[1] + 1
+        elsif (i == 3) && (characters[i] == "s")
+            array[0] = array[0] + 4
         elsif (i == 6) && (characters[i] == "x")
             array[2] = array[2] + 1
+        elsif (i == 6) && (characters[i] == "s")
+            array[0] = array[0] + 2
         elsif (i == 9) && (characters[i] == "x")
             array[3] = array[3] + 1 
+        elsif (i == 9) && (characters[i] == "t")
+            array[0] = array[0] + 1
         elsif (characters[i] == "-")
             pass
         else
