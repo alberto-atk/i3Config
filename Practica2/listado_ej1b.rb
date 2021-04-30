@@ -32,16 +32,16 @@ end
 
 
 =begin
-Usage: Check if a path exists
-Name of method: checkDirectory
+Usage: List a directory passed by path
+Name of method: listDirectory
 Date of creation: 08/04/2021
 Members: Roberto Jiménez y Alberto Pérez
 Last modification: 08/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - path: path of the directory to list
     Out: 
-        - boolean: True if exists
+        - list: result from ls if directory has reading permissions
 =end
 def listDirectory path
     if File.readable?(path)
@@ -53,16 +53,16 @@ end
 
 
 =begin
-Usage: List files of a directory
-Name of method: listFiles
+Usage: List all directories starting from path
+Name of method: listDirectories
 Date of creation: 08/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 9/04/2021
+    - Added different colors in terminal for directories, files...
 Parameters:
     Entry:
         - path: path that will be checked
     Out: 
-        - List of files of path
 =end
 def listDirectories path
     auxDirectories = []
@@ -87,13 +87,13 @@ end
 
 
 =begin
-Usage: Body of program
+Usage: Body of the program
 Date of creation: 08/04/2021
 Members: Roberto Jiménez y Alberto Pérez
 Last modification: 08/04/2021
 Parameters:
     Entry:
-        - Argv: Parameter introduced by console when program is called
+        - Path: Parameter requested from the user
     Out: 
         - None
 =end
@@ -105,7 +105,3 @@ if checkDirectory path
 else
     puts "Error, path is not correct"
 end
-=begin
-TODO hay que comprobar lo de si el usuario tiene permisos
-pero nadie sabe
-=end

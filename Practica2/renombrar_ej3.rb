@@ -7,16 +7,16 @@ correcto
 =end
 
 =begin
-Usage: List files of a directory
+Usage: Lists the files from a directory that match with extension
 Name of method: listFiles
-Date of creation: 08/04/2021
+Date of creation: 29/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 29/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - extension: extension to check
     Out: 
-        - List of files of path
+        - List of files from path that matched the extension
 =end
 def listFiles extension
     list = []
@@ -25,16 +25,17 @@ def listFiles extension
 end
 
 =begin
-Usage: List files of a directory
-Name of method: listFiles
-Date of creation: 08/04/2021
+Usage: Renames a file with a new extension
+Name of method: renameFile
+Date of creation: 29/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 29/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - fileName: name of the file whose extension is going to be changed
+        - new_extension: new extension to the file
     Out: 
-        - List of files of path
+        - String: Name of the file with the new extension
 =end
 def renameFile fileName, new_extension
     auxName = fileName.split(".")
@@ -44,10 +45,10 @@ def renameFile fileName, new_extension
 end
 
 =begin
-Usage: Body of program
-Date of creation: 08/04/2021
+Usage: Body of the program
+Date of creation: 29/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 29/04/2021
 Parameters:
     Entry:
         - Argv: Parameter introduced by console when program is called

@@ -9,16 +9,17 @@ Implementar las oportunas modificaciones para que lo soporte.
 =end
 
 =begin
-Usage: Sort 
-Name of method: listFiles
-Date of creation: 08/04/2021
+Usage: Check if the object passed is a number 
+Name of method: is_number?
+Date of creation: 15/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 15/04/2021
+    - Now you can check all type of objects, not only Strings.
 Parameters:
     Entry:
-        - path: path that will be checked
+        - object: object to check
     Out: 
-        - List of files of path
+        - boolean: return true if the object is a number
 =end
 def is_number? object
     true if Float(object) rescue false 
@@ -26,16 +27,16 @@ end
 
     
 =begin
-Usage: Sort 
+Usage: Deletes from argv all elements that aren't numbers
 Name of method: listFiles
-Date of creation: 08/04/2021
+Date of creation: 15/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 15/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - argv: list of elements to check
     Out: 
-        - List of files of path
+        - aux: argv, only formed by numbers
 =end
 def cleanArgv argv
     aux = []
@@ -51,16 +52,16 @@ end
 
 
 =begin
-Usage: Sort 
-Name of method: listFiles
-Date of creation: 08/04/2021
+Usage: Generates a string from an array 
+Name of method: generateStringFromArray
+Date of creation: 15/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 15/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - array: array of elements
     Out: 
-        - List of files of path
+        - string: string got from the array 
 =end
 def generateStringFromArray array
     puts ""
@@ -73,10 +74,10 @@ end
 
 
 =begin
-Usage: Body of program
-Date of creation: 08/04/2021
+Usage: Body of the program
+Date of creation: 15/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 15/04/2021
 Parameters:
     Entry:
         - Argv: Parameter introduced by console when program is called

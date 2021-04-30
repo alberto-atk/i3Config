@@ -15,31 +15,32 @@ comunicarlo.
 
 
 =begin
-Usage: Check if a path exists
-Name of method: checkDirectory
-Date of creation: 08/04/2021
+Usage: doing nothing in a match
+Name of method: pass
+Date of creation: 22/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 22/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - None
     Out: 
-        - boolean: True if exists
+        - None
 =end
 def pass
 end
 
 =begin
-Usage: Check if a path exists
-Name of method: checkDirectory
-Date of creation: 08/04/2021
+Usage: Checks the firsts characters
+Name of method: checkFirsts
+Date of creation: 22/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 22/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - characters: string to check
+        - array: gets the number of permissions in octal
     Out: 
-        - boolean: True if exists
+        - None
 =end
 def checkFirsts characters, array
 
@@ -62,16 +63,17 @@ end
 
 
 =begin
-Usage: Check if a path exists
-Name of method: checkDirectory
-Date of creation: 08/04/2021
+Usage: Checks the seconds characters
+Name of method: checkSeconds
+Date of creation: 22/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 22/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - characters: string to check
+        - array: gets the number of permissions in octal
     Out: 
-        - boolean: True if exists
+        - None
 =end
 def checkSeconds characters, array
     for i in [2,5,8]
@@ -90,17 +92,19 @@ def checkSeconds characters, array
     end
 end
 
+
 =begin
-Usage: Check if a path exists
-Name of method: checkDirectory
-Date of creation: 08/04/2021
+Usage: Checks the seconds characters
+Name of method: checkSeconds
+Date of creation: 22/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 22/04/2021
 Parameters:
     Entry:
-        - path: path that will be checked
+        - characters: string to check
+        - array: gets the number of permissions in octal
     Out: 
-        - boolean: True if exists
+        - None
 =end
 def checkThirds characters, array
     for i in [3,6,9]
@@ -127,11 +131,22 @@ end
 
 
 
+
 =begin
-Usage: Body of program
-Date of creation: 08/04/2021
+Para la solucion de este ejercicio, se va a seguir el siguiente metodo de resolucion:
+    - Se va a usar de ejemplo la cadena rwx-wxr-x.
+    - Para el analisis de una cadena, se realizara de la siguiente forma:
+        - checkFirsts --> analiza todas las primeras posiciones, es decir, r - r
+        - checkSeconds --> analiza todas las segundas posiciones, es decir, w w -
+        - checkThirds --> analiza todas las terceras posiciones, es decir, x x x
+    - Mientras se analizan, se van sumando los valores a la posicion correspondiente del numero
+=end
+
+=begin
+Usage: Body of the program
+Date of creation: 22/04/2021
 Members: Roberto Jiménez y Alberto Pérez
-Last modification: 08/04/2021
+Last modification: 22/04/2021
 Parameters:
     Entry:
         - Argv: Parameter introduced by console when program is called
@@ -140,7 +155,7 @@ Parameters:
 =end
 if ARGV.length == 1
     characters = ARGV[0].chars
-    if characters.length == 10
+    if characters.length == 9
         permissions = [0,0,0,0]
         checkFirsts characters, permissions
         checkSeconds characters, permissions
@@ -148,8 +163,9 @@ if ARGV.length == 1
         puts permissions
 
     else
-        puts "Error, the string is not correct (len is not 9)"
+        puts "Error, the string is not correct (length is not 9)"
     end
 else
     puts "Error 1 parameter is necessary to execute the script"
 end
+
