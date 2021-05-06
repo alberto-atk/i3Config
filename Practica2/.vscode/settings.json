@@ -1,0 +1,44 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "155.210.68.162",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "miBDUNIZAR",
+            "database": "bd_780906",
+            "username": "u_780906",
+            "password": "pwd_780906"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "bdRaspy",
+            "database": "bd_p1",
+            "username": "rober",
+            "password": "rober"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "bdAS2",
+            "group": "bdAS2",
+            "database": "practicaAS2",
+            "username": "rober",
+            "password": "rober"
+        }
+    ]
+}

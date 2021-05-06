@@ -1,27 +1,69 @@
 require 'nokogiri'
 require 'open-uri'
 
-=begin 
-
+=begin
+Ejercicio 3. Escribir un script “renombrar” que renombre un conjunto de ficheros, posibilitando
+el cambio de la extensión del fichero, siendo la sintaxis la siguiente:
+./renombrar extensión-anterior nueva-extensión
+El script deberá contemplar los posibles casos de error, como por ejemplo el paso de parámetros
+correcto
 =end
-parsed_data = Nokogiri::HTML.parse(URI.open(ARGV[0]))
-lista = []
-puts parsed_data.class
-tags = parsed_data.xpath("//a")
-tags.each do |tag|
-    lista.append("#{tag[:href]}\t#{tag.text}")
-    #puts "#{tag[:href]}\t#{tag.text}"
-end
-lista2 = `echo #{lista} | grep -E 'http[s]*://[a-zA-Z0-9./?@=%&:_#-]*'`
-lista3 =  lista2.split(',')
-for linea in lista3
-    auxLinea = linea.split()
-    #puts auxLinea[0] 
-    #puts  auxLinea[1]
-    puts linea
+
+=begin
+    Usage: Gets source code and urls from a page
+    Name of method: getSoruceCode
+    Date of creation: 29/04/2021
+    Members: Roberto Jiménez y Alberto Pérez
+    Last modification: 06/05/2021
+    Parameters:
+        Entry:
+            - URL: Parameter of the program
+        Out: 
+            - list with urls without parsing
+=end
+
+def getSourceCode url
+    # Gets source code from page
+    parsed_data = Nokogiri::HTML.parse(URI.open(url))
+    list = []
+    puts parsed_data.class
+
+    #Gets all urls  from source code
+    tags = parsed_data.xpath("//a")
+    tags.each do |tag|
+        list.append("#{tag[:href]}\t#{tag.text}")    
+    end
+    return list
 end
 
+=begin
+    Usage: Insert data received into a DB
+    Name of method: insertDB
+    Date of creation: 29/04/2021
+    Members: Roberto Jiménez y Alberto Pérez
+    Last modification: 06/05/2021
+    Parameters:
+        Entry:
+            - list: list with urls
+            - url: URL from page to analyze
+        Out: 
+            - None, output is saved in DB
+=end
 
-#puts tags
-#ruby webCrawler_ej8.rb https://moodle.unizar.es/add/ | grep -E 'https://[a-zA-Z0-9./?@=%&:_#-]*' 
-#https://www.rubyguides.com/2012/01/parsing-html-in-ruby/
+def insertDB list, url
+    #Insert data into DB 
+    `echo -n #{url} > aux.csv`
+    `echo " ~" >> aux.csv`
+    `echo #{list} >> aux.csv`
+    `sudo mysql --local-infile=1 -h "localhost" -u rober "-prober"  < insertarBD.sql`
+end
+
+#Parse information with Grep command
+list = getSourceCode ARGV[0]
+parsedList = `echo #{list} | grep -E 'http[s]*://[a-zA-Z0-9./?@=%&:_#-]*'`
+finalList =  parsedList.split(',')
+insertDB finalList, ARGV[0]
+for url in finalList    
+    puts url
+end
+
