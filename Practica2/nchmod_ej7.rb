@@ -1,14 +1,10 @@
 =begin
-Ejercicio 1a. Desarrollar un script donde se muestren los ficheros del pasado por
-parámetro, así como los permisos asociados a cada uno de ellos, su identificador de usuario, su
-identificador de grupo, así como permisos como “Setuid, Setgid, o hasta incluso si tiene activo
-el bit sticky bit”.
-Sintaxis: listado.rb [Dir]
- Dir será opcional de forma que si el usuario no lo inserta el script buscará en el directorio actual
- El script deberá capturar todas las posibles excepciones como pueden ser:
-a. Debe permitir el paso de parámetros con una sintaxis correcta
-b. Si se produce alguna excepción grave a la hora de la búsqueda en sí, el script deberá
-comunicarlo.
+Ejercicio 7. Realizar un script en ruby denominado nchmod que nos visualice por el código en
+decimal asociado a los permisos que le queramos dar a un fichero.
+Ejemplo:
+nchmod.rb r-sr-xr-x el resultado que devolverá será 4555
+El script tendrá que controlar el número de caracteres insertados por el usuario, mostrando un
+mensaje de error donde especifiquemos el uso
 =end
 
 

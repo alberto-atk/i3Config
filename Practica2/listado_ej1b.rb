@@ -1,14 +1,12 @@
 =begin
-Ejercicio 1a. Desarrollar un script donde se muestren los ficheros del pasado por
-parámetro, así como los permisos asociados a cada uno de ellos, su identificador de usuario, su
-identificador de grupo, así como permisos como “Setuid, Setgid, o hasta incluso si tiene activo
-el bit sticky bit”.
-Sintaxis: listado.rb [Dir]
- Dir será opcional de forma que si el usuario no lo inserta el script buscará en el directorio actual
- El script deberá capturar todas las posibles excepciones como pueden ser:
-a. Debe permitir el paso de parámetros con una sintaxis correcta
-b. Si se produce alguna excepción grave a la hora de la búsqueda en sí, el script deberá
-comunicarlo.
+Ejercicio 1b. Modificar el anterior script para que se le pida al usuario por consola el directorio
+donde tendrá que buscar.
+Sintaxis: listado.rb
+El script deberá capturar todas las posibles excepciones como pueden ser:
+a. Si el directorio que el usuario introduce no existe o no es un directorio, deberá dar un
+error.
+b. Si el usuario que lo invoca no tiene permisos de lectura del directorio, el script deberá
+gestionar esta excepción.
 =end
 
 

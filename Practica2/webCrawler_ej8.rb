@@ -2,11 +2,8 @@ require 'nokogiri'
 require 'open-uri'
 
 =begin
-Ejercicio 3. Escribir un script “renombrar” que renombre un conjunto de ficheros, posibilitando
-el cambio de la extensión del fichero, siendo la sintaxis la siguiente:
-./renombrar extensión-anterior nueva-extensión
-El script deberá contemplar los posibles casos de error, como por ejemplo el paso de parámetros
-correcto
+Ejercicio 8. Construir un Web Crawler (rastreador, araña, o robot) en Ruby capaz de analizar
+una página web concreta y que cree una base de datos con la información obtenida
 =end
 
 =begin

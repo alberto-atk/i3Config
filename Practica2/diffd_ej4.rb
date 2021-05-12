@@ -1,4 +1,19 @@
+=begin
+Ejercicio 4. Realizar un script denominado diffd con la siguiente sintaxis:
+diffd [-r] directorio1 [directorio2]
+Donde el script deberá buscar todos los nombres de fichero ubicados en directorio1 y
+directorio2, exceptuando los nombres de los directorios, y a continuación mostrar las
+diferencias, o sea aquellos ficheros que aparecen en uno de los directorios, pero no en el otro,
+indicando para cada uno de ellos en que directorio se encuentran.
+Por otra parte, será necesario introducir una serie de parámetros: directorio1 y directorio2,
+siendo los directorios donde realizaremos la comparación, y como podemos observar en la
+sintaxis
+directorio2 es opcional, esto quiere decir que si el usuario no lo especifica el script comparará
+directorio1 con el directorio actual.
+Finalmente, si añadimos la opción –r (opcional) el script tendrá que realizar la acción inversa,
+mostrando los nombres de aquellos ficheros que se encuentran en los dos directorios.
 
+=end
 
 =begin
     Usage: Check if a path exists
