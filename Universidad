@@ -1,0 +1,2 @@
+#!/bin/bash
+nautilus /run/user/1000/gvfs/google-drive:host=gmail.com,user=apbatecaz/1c0TdncUHP0Ms6OgltInsCx10l6pY9avw

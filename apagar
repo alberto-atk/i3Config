@@ -1,0 +1,15 @@
+#!/bin/bash
+
+texto="¿<span weight=\"bold\" foreground=\"green\">Apagar</span> ?"
+ans1=`zenity --question \
+        --title="Apagar?" \
+        --width=250 \
+        --ok-label="SI" \
+        --text="${texto}" \
+        --cancel-label="NO" `
+ans=$?
+if [ $ans -eq 0 ]
+then
+    echo "Si que quiere apagar"
+    shutdown now    
+fi
