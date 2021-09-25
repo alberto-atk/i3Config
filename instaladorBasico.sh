@@ -54,5 +54,5 @@ PATH=$PATH
 
 PATH=$PATH:/home/alberto/bin
 
-
+#Hay que reiniciar despues para que se cree el directorio de configuracion de i3 (sudo reboot)
 
