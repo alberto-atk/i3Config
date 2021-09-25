@@ -47,6 +47,12 @@ wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/apagar
 
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp
 
+chmod +x discord whatsapp Universidad apagar
+
+#Agreger /bin al path
+PATH=$PATH
+
+PATH=$PATH:/home/alberto/bin
 
 
 
