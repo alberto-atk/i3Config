@@ -26,5 +26,5 @@ sudo dpkg -i GitHubDesktop-linux-2.9.3-linux1.deb
 sudo apt-get install -y flameshot
 
 #Instalacion git
-sudo apt install git -y
+sudo apt install -y git
 
