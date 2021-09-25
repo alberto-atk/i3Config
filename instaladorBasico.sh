@@ -22,4 +22,7 @@ sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-li
 
 sudo dpkg -i GitHubDesktop-linux-2.9.3-linux1.deb
 
+#Instalacion flameshot
+sudo apt-get install -y flameshot
+
 
