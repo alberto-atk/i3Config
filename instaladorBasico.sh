@@ -28,3 +28,6 @@ sudo apt-get install -y flameshot
 #Instalacion git
 sudo apt install -y git
 
+#Instalacion i3
+sudo apt install i3 -y
+
