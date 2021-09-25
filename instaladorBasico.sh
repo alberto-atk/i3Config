@@ -31,3 +31,22 @@ sudo apt install -y git
 #Instalacion i3
 sudo apt install i3 -y
 
+#Instalacion rofi
+sudo apt install rofi -y
+
+#Descarga scripts github
+mkdir bin
+
+cd bin
+
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/discord
+
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/Universidad
+
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/apagar
+
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp
+
+
+
+
