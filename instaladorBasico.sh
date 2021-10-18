@@ -34,6 +34,14 @@ sudo apt install i3 -y
 #Instalacion rofi
 sudo apt install rofi -y
 
+#Instalacion terminal fish
+sudo apt-get install fish
+
+#Usar fish en lugar de bash
+chsh -s /usr/bin/fish
+
+#https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/
+
 #Descarga scripts github
 mkdir bin
 
