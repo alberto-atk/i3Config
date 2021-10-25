@@ -19,3 +19,4 @@ nombreArchivo="$1.desktop"
 touch $nombreArchivo
 chmod +x $nombreArchivo
 echo -e $texto > $nombreArchivo
+sudo mv $nombreArchivo /usr/share/applications/$nombreArchivo
