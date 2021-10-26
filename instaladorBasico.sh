@@ -58,6 +58,14 @@ wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp
 
 chmod +x discord whatsapp Universidad apagar
 
+#Descarga de las imagenes de whatsapp y discord
+mkdir img
+cd img
+
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/discord.png
+
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/whatsapp.png
+
 #Agreger /bin al path
 PATH=$PATH
 
