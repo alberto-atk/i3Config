@@ -32,6 +32,9 @@ sudo apt install i3 -y
 #Instalacion rofi
 sudo apt install rofi -y
 
+#Instalacion telegram
+sudo apt install telegram-desktop
+
 #Instalacion terminal fish
 sudo apt-get install fish
 
