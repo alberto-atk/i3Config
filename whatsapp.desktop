@@ -5,6 +5,6 @@ Type=Application
 Terminal=false
 Exec=/home/alberto/bin/whatsapp
 Name=Whatsapp            
-Icon=/home/alberto/bin/icons/whatsapp.png
+Icon=/home/alberto/bin/img/whatsapp.png
 
 
