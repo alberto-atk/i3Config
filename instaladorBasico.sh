@@ -28,6 +28,7 @@ sudo apt install -y git
 
 #Instalacion i3
 sudo apt install i3 -y
+sudo apt install i3blocks -y
 
 #Instalacion rofi
 sudo apt install rofi -y
