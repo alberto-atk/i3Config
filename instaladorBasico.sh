@@ -36,6 +36,9 @@ sudo apt install rofi -y
 #Instalacion telegram
 sudo apt install telegram-desktop
 
+#Instalacion pavucontrol(pulseaudio manager)
+sudo apt install pavucontrol -y
+
 #Instalacion terminal fish
 sudo apt-get install fish
 
