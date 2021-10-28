@@ -64,7 +64,7 @@ cd img
 
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/discord.png
 
-https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/whatsapv1.png
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/whatsapv1.png
 mv whatsapv1.png whatsapp.png
 
 #Agreger /bin al path
