@@ -72,5 +72,11 @@ PATH=$PATH
 
 PATH=$PATH:/home/alberto/bin
 
+
+#Descarga de los .desktop
+cd /usr/share/application/
+sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp.desktop
+sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/discord
+
 #Hay que reiniciar despues para que se cree el directorio de configuracion de i3 (sudo reboot)
 
