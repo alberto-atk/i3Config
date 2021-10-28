@@ -74,7 +74,7 @@ PATH=$PATH:/home/alberto/bin
 
 
 #Descarga de los .desktop
-cd /usr/share/application/
+cd /usr/share/applications/
 sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp.desktop
 sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/discord
 
