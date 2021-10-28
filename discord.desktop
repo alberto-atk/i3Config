@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/alberto/bin/discord.sh
+Name=Discord            
+Icon=/home/alberto/bin/icons/discord.png
+
