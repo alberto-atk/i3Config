@@ -64,7 +64,8 @@ cd img
 
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/discord.png
 
-wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/whatsapp.png
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/whatsappv1.png
+mv whatsappv1.png whatsapp.png
 
 #Agreger /bin al path
 PATH=$PATH
