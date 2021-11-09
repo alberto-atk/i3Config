@@ -221,6 +221,8 @@ for_window [class="WhatsApp"] focus
 #Activar el block num al inicio
 exec_always --no-startup-id numlockx on
 
+for_window [class="Pavucontrol"] floating enable
+
 #window colors:
 #client.focused        #0F0F0F #7FB256 #F5F5FF
 #client.focused_inactive    #0F0F0F #7FB256 #E5E5E5
