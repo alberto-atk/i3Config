@@ -73,7 +73,8 @@ wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/discord.png
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/whatsapv1.png
 mv whatsapv1.png whatsapp.png
 
-wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/youtube-music.png
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/youtube-music1.png
+mv youtube-music1.png youtube-music.png
 
 #Agreger /bin al path
 PATH=$PATH
