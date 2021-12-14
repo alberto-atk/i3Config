@@ -60,6 +60,8 @@ wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/apagar
 
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp
 
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/youtube-music
+
 chmod +x discord whatsapp Universidad apagar
 
 #Descarga de las imagenes de whatsapp y discord
@@ -71,6 +73,8 @@ wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/discord.png
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/whatsapv1.png
 mv whatsapv1.png whatsapp.png
 
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/img/youtube-music.png
+
 #Agreger /bin al path
 PATH=$PATH
 
@@ -80,7 +84,7 @@ PATH=$PATH:/home/alberto/bin
 #Descarga de los .desktop
 cd /usr/share/applications/
 sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp.desktop
-sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/discord
-
+sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/discord.desktop
+sudo wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/youtube-music.desktop
 #Hay que reiniciar despues para que se cree el directorio de configuracion de i3 (sudo reboot)
 
