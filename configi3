@@ -220,6 +220,7 @@ for_window [class="WhatsApp"] focus
 
 #Activar el block num al inicio
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id xbindkeys
 
 for_window [class="Pavucontrol"] floating enable
 
