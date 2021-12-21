@@ -1,0 +1,22 @@
+sudo apt install cmake libevdev-dev libudev-dev libconfig++-dev 
+
+git clone https://github.com/PixlOne/logiops.git
+
+cd logiops
+
+mkdir build
+cd build
+cmake ..
+make
+
+sudo make install
+
+cd
+
+wget https://github.com/PixlOne/logiops/blob/master/logid.example.cfg
+mv logid.example.cfg logid.cfg
+sudo mv logid.cfg /etc/logid.cfg
+
+
+
+sudo systemctl enable --now logid
