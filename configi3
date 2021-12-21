@@ -37,6 +37,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -207,9 +210,12 @@ bar {
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 	        urgent_workspace   $blue-color   $blue-color   $text-color
-        }
+      }
 }
 
+#bar{
+#        status_command py3status -c ~/.config/i3/i3status.conf
+#}
 
 bindsym $mod + Shift + S exec --no-startup-id flameshot gui
 
