@@ -13,7 +13,7 @@ sudo make install
 
 cd
 
-wget wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/logid.cfg
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/logid.cfg
 
 sudo mv logid.cfg /etc/logid.cfg
 
