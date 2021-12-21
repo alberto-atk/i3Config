@@ -13,10 +13,10 @@ sudo make install
 
 cd
 
-wget https://github.com/PixlOne/logiops/blob/master/logid.example.cfg
-mv logid.example.cfg logid.cfg
+wget wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/logid.cfg
+
 sudo mv logid.cfg /etc/logid.cfg
 
-
-
 sudo systemctl enable --now logid
+
+sudo logid -v
