@@ -17,6 +17,14 @@ wget wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/logid.cfg
 
 sudo mv logid.cfg /etc/logid.cfg
 
+#para que ruleta lateral suba y baje volumen
+sudo apt install xbindkeys
+sudo apt install xautomation
+wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/.xbindkeysrc
+mv .xbindkeysrc ~/.xbindkeysrc
+pkill xbindkeys && xbindkeys
+xbindkeys
+
 sudo systemctl enable --now logid
 
 sudo logid -v
