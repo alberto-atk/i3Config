@@ -54,10 +54,6 @@ cd bin
 
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/discord
 
-wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/Universidad
-
-wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/apagar
-
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/whatsapp
 
 wget https://raw.githubusercontent.com/alberto-atk/i3Config/main/youtube-music
