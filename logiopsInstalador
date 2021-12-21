@@ -28,4 +28,5 @@ xbindkeys
 
 sudo apt install playerctl 
 
+sudo systemctl enable logid
 sudo logid -v
