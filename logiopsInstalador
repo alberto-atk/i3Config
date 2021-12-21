@@ -26,6 +26,6 @@ mv .xbindkeysrc ~/.xbindkeysrc
 pkill xbindkeys && xbindkeys
 xbindkeys
 
-sudo systemctl enable --now logid
+sudo apt install playerctl 
 
 sudo logid -v
